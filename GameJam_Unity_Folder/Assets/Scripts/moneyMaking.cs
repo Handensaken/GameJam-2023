@@ -21,6 +21,5 @@ public class moneyMaking : MonoBehaviour
     }
     public void makeMoney(){
         playerMoney.money += moneyPerTick;
-        Debug.Log(playerMoney.money);
     }
 }
