@@ -285,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 1175426899}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.1, y: 1.1, z: 0}
+  m_LocalPosition: {x: 0.53, y: -4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -503,7 +503,7 @@ Transform:
   m_GameObject: {fileID: 1486877895}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.68, y: -3.15, z: 0}
+  m_LocalPosition: {x: -1.57, y: 3.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -543,12 +543,73 @@ MonoBehaviour:
   endPoint: {fileID: 1486877895}
   throwTime: 1
   sunsetHeight: 2
-  throwHeight:
+  throwDistanceArc:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5246585
+      value: 0.9034814
+      inSlope: 0.6464834
+      outSlope: 0.6464834
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.31533444
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  throwHeightArc:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.55245006
+      value: 0.7486055
+      inSlope: 0.6988642
+      outSlope: 0.6988642
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.37408864
+      outWeight: 0.5581069
+    - serializedVersion: 3
+      time: 1
+      value: 0.0009384155
+      inSlope: -4.590042
+      outSlope: -4.590042
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04443863
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  arcHeightMultiplier: 6
 --- !u!4 &2014881708
 Transform:
   m_ObjectHideFlags: 0

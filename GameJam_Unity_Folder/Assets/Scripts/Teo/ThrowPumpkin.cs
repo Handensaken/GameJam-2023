@@ -14,7 +14,9 @@ public class ThrowPumpkin : MonoBehaviour
     [SerializeField] private float sunsetHeight = 2f;
 
     [Header("Throw arc")]
-    [SerializeField] private AnimationCurve throwHeight;
+    [SerializeField] private AnimationCurve throwDistanceArc;
+    [SerializeField] private AnimationCurve throwHeightArc;
+    [SerializeField] private float arcHeightMultiplier = 3f;
     
 
 
@@ -23,35 +25,37 @@ public class ThrowPumpkin : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Debug.Log("YEET!");
+            Debug.Log("The dawn has arrived");
             StartCoroutine(SunsetArc(pumpkin.transform, startPoint.transform.position, 
                 endPoint.transform.position, sunsetHeight, throwTime));
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha2))
         {
-
+            Debug.Log("YEET!");
+            StartCoroutine(ThrowInArc(pumpkin.transform, startPoint.transform.position,
+                endPoint.transform.position, throwTime));
         }
     }
 
-    private IEnumerator ThrowArc(
+    private IEnumerator ThrowInArc(
         Transform mover,
         Vector2 start,
         Vector2 end,
-        float extraHeight, // Set this to negative if you want to flip the arc.
+        //float extraHeight, // Set this to negative if you want to flip the arc.
         float arcThrowTime
         )
     {
         float currentTime = 0f;
 
         do{
-            mover.position = Vector2.Lerp(start, end, currentTime);
-            mover.position += new Vector3(0f, 
-                throwHeight.Evaluate(currentTime) - throwHeight.Evaluate(currentTime-Time.deltaTime), 0f);
             currentTime += Time.deltaTime / arcThrowTime;
+            mover.position = Vector2.Lerp(start, end, throwDistanceArc.Evaluate(currentTime));
+            mover.position += new Vector3(0f, (throwHeightArc.Evaluate(currentTime)) * arcHeightMultiplier, 0f);
             yield return null;
         }while(currentTime < 1f);
         
+        mover.position = end;
     }
 
     private IEnumerator SunsetArc(
