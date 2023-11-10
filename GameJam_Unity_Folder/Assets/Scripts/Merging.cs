@@ -18,7 +18,7 @@ public class Merging : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void OnMouseDown(){
         mouseButtonReleased = false;
@@ -46,7 +46,6 @@ public class Merging : MonoBehaviour
                 Destroy(collision.gameObject);
                 Destroy(gameObject);
             }
-            
         }
     }
 }
