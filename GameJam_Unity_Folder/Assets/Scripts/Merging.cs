@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class Merging : MonoBehaviour
 {
+    public GameObject nextPumpkin;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
-    public static bool mouseButtonReleased;
+    private static bool mouseButtonReleased;
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("hej");
+        
     }
     private void OnMouseDown(){
         mouseButtonReleased = false;
@@ -38,17 +39,14 @@ public class Merging : MonoBehaviour
         thisGameobjectName = gameObject.name.Substring(0, name.IndexOf("_"));
         collisionGameobjectName = collision.gameObject.name.Substring(0, name.IndexOf("_"));
 
-        if (mouseButtonReleased && thisGameobjectName == "Pumpa" && thisGameobjectName == collisionGameobjectName){
-            Instantiate(Resources.Load("Pumpa2_Object"), transform.position, quaternion.identity);
-            mouseButtonReleased = false;
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
-        else if (mouseButtonReleased && thisGameobjectName == "Pumpa2" && thisGameobjectName == collisionGameobjectName){
-            Instantiate(Resources.Load("Pumpa3_Object"), transform.position, quaternion.identity);
-            mouseButtonReleased = false;
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
+        if (mouseButtonReleased && thisGameobjectName == collisionGameobjectName){
+            if (nextPumpkin != null){
+                Instantiate(nextPumpkin, transform.position, quaternion.identity);
+                mouseButtonReleased = false;
+                Destroy(collision.gameObject);
+                Destroy(gameObject);
+            }
+            
         }
     }
 }
