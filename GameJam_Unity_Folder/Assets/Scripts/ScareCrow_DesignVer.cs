@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestingTeo : MonoBehaviour
+public class ScareCrow_DesignVer : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +13,6 @@ public class TestingTeo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log("Happy times");
-        }   
+        
     }
 }
