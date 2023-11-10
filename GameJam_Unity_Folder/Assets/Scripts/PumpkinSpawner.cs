@@ -13,6 +13,14 @@ public class PumpkinSpawner : MonoBehaviour
     private Vector3 screenCoordinates;
     public float inset = 0;
     private float currentTime = 0;
+    
+    [SerializeField] private float throwTime = 1f;
+    [SerializeField] private AnimationCurve throwDistanceArc;
+    [SerializeField] private AnimationCurve throwHeightArc;
+    [SerializeField] private float arcHeightMultiplier = 3f;
+    
+    [Space(6)]
+    [SerializeField] private VoidEventSO throwInArcSO;
     // Start is called before the first frame update
     void Start()
     {
@@ -54,8 +62,28 @@ public class PumpkinSpawner : MonoBehaviour
             }
         }
 
+        //Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
+        var newPumpk = Instantiate(pumpkinSpawnObject);
+        StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
+    }
 
+    private IEnumerator ThrowInArc(
+        Transform mover,
+        Vector2 start,
+        Vector2 end,
+        float arcThrowTime
+        )
+    {
+        throwInArcSO.RaiseEvent();
+        float currentTime = 0f;
 
-        Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
+        do{
+            currentTime += Time.deltaTime / arcThrowTime;
+            mover.position = Vector2.Lerp(start, end, throwDistanceArc.Evaluate(currentTime));
+            mover.position += new Vector3(0f, (throwHeightArc.Evaluate(currentTime)) * arcHeightMultiplier, 0f);
+            yield return null;
+        }while(currentTime < 1f);
+        
+        mover.position = end;
     }
 }
