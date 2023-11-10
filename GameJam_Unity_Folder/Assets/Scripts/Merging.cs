@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using Unity.Mathematics;
-using UnityEditor.ShortcutManagement;
 using UnityEngine;
 
 public class Merging : MonoBehaviour
