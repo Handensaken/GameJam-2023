@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ThrowCooldown : MonoBehaviour
 {
+    [SerializeField] private VoidEventSO throwInArcSO;
     [SerializeField] private float cooldown = 3f;
     [SerializeField] private Image cdFillImage;
 
@@ -24,9 +25,10 @@ public class ThrowCooldown : MonoBehaviour
 
     void Update()
     {
-        if(_ready && Input.GetKeyDown(KeyCode.Alpha3))
+        if(_ready && Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(ActivateCoolDown());
+            throwInArcSO.RaiseEvent();
         }
     }
 
