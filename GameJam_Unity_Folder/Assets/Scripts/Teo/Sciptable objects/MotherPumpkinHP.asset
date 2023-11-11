@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverEvent: {fileID: 11400000, guid: 2bcaefef46c4e2649bd23c93fa500d6a, type: 2}
   maxHealth: 1000
-  currentHealth: 800
+  currentHealth: 1000

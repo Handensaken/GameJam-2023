@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivateParticleOnVoidEvent : MonoBehaviour
 {
     [SerializeField] private VoidEventSO voidEvent;
-    [SerializeField] private List<ParticleSystem> particleSystem;
+    [SerializeField] private new List<ParticleSystem> particleSystem;
 
     private void OnEnable() 
     {
