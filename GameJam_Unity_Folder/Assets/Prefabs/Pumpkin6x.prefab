@@ -171,5 +171,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2554f8e6380e18e4d8a0a000077e2dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextPumpkin: {fileID: 0}
-  level: 0
+  nextPumpkin: {fileID: 7041628632305483581, guid: f7bd74d6830d19a49811c4014580c7d9, type: 3}
+  level: 6
