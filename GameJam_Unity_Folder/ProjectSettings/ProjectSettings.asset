@@ -708,11 +708,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: e908be58-1080-4e23-a189-f2eee3bfb6c2
+  cloudProjectId: 399ff5c7-3681-4b95-9921-7e9fefc1dd86
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GameJam_2023
-  organizationId: raggeb
+  projectName: GameJam_Unity_Folder
+  organizationId: nimster10
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

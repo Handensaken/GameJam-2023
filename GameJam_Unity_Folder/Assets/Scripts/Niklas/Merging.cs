@@ -5,22 +5,13 @@ using UnityEngine;
 
 public class Merging : MonoBehaviour
 {
+    [SerializeField] private TotalListCheckEvent pumpkinListEvent;
     public GameObject nextPumpkin;
     public int level;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
     private bool mouseButtonReleased = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void OnMouseDown()
     {
         mouseButtonReleased = false;
@@ -47,18 +38,38 @@ public class Merging : MonoBehaviour
                 if (nextPumpkin != null)
                 {
                     Instantiate(nextPumpkin, transform.position, quaternion.identity);
+
+                    Debug.LogWarning("One!");
+                    pumpkinListEvent.RaiseEvent(nextPumpkin, true);
+                    //Debug.LogWarning("Two!");
+                    //pumpkinListEvent.RaiseEvent(collision.gameObject, false);
+                    //Debug.LogWarning("Three!");
+                    //pumpkinListEvent.RaiseEvent(gameObject, false);
+                    Debug.Log("Done?");
+
                     mouseButtonReleased = false;
-                    Destroy(collision.gameObject);
-                    Destroy(gameObject);
+
+                    //Destroy(collision.gameObject);
+                    mergingScript.FruitSuicide();
+                    FruitSuicide();
                 }
             }
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
-            if (enemyScareCrow != null && enemyScareCrow._satisfied != true){
+            if (enemyScareCrow != null && enemyScareCrow._satisfied != true)
+            {
+                pumpkinListEvent.RaiseEvent(gameObject, false);
                 Destroy(gameObject);
                 enemyScareCrow._satisfied = true;
                 enemyScareCrow.getHead(GetComponent<Sprite>());
             }
         }
         mouseButtonReleased = false;
+    }
+
+    public void FruitSuicide()
+    {
+        Debug.Log("New fruit, new me!");
+        pumpkinListEvent.RaiseEvent(gameObject, false);
+        Destroy(gameObject);
     }
 }

@@ -15,6 +15,7 @@ public class PumpkinSpawner : MonoBehaviour
     public List<GameObject> pumpKins = new List<GameObject>();
 
     public float spawnSpeed;
+    public int spawnLimit = 18;
     [Space(8)]
     public GameObject lv1Pumpkin;
     private int lv1SpawnChance = 100;
@@ -43,6 +44,7 @@ public class PumpkinSpawner : MonoBehaviour
     [SerializeField] private VoidEventSO throwInArcSO;
     [SerializeField] private VoidEventSO buyFasterSpawning;
     [SerializeField] private SendNewPercentEventSO newOddsEvent;
+    [SerializeField] private TotalListCheckEvent pumpkinListChangeEvent;
 
 
     void Start()
@@ -54,12 +56,14 @@ public class PumpkinSpawner : MonoBehaviour
     {
         buyFasterSpawning.OnEventRaised += FasterSpawnRate;
         newOddsEvent.OnEventRaised += AdjustSpawnOdds;
+        pumpkinListChangeEvent.OnEventRaised += PumpkinMessageReceived;
     }
 
     private void OnDisable()
     {
         buyFasterSpawning.OnEventRaised -= FasterSpawnRate;
         newOddsEvent.OnEventRaised -= AdjustSpawnOdds;
+        pumpkinListChangeEvent.OnEventRaised -= PumpkinMessageReceived;
     }
 
     void Update()
@@ -74,36 +78,38 @@ public class PumpkinSpawner : MonoBehaviour
 
     public void spawn()
     {
-        float xPos;
-        float yPos;
-        int dontBreak = 0;
-        while (true)
+        if (pumpKins.Count < spawnLimit)
         {
-            dontBreak++;
-            xPos = UnityEngine.Random.Range(-screenCoordinates.x + inset, screenCoordinates.x - inset);
-            yPos = UnityEngine.Random.Range(-screenCoordinates.y + inset, screenCoordinates.y - inset);
+            float xPos;
+            float yPos;
+            int dontBreak = 0;
+            while (true)
+            {
+                dontBreak++;
+                xPos = UnityEngine.Random.Range(-screenCoordinates.x + inset, screenCoordinates.x - inset);
+                yPos = UnityEngine.Random.Range(-screenCoordinates.y + inset, screenCoordinates.y - inset);
 
-            Vector2 pumpKinQueenSize = pumpkinQueen.GetComponent<BoxCollider2D>().bounds.size;
-            if (xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f
-            && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + 0.05
-            && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - 0.05f
-            && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + 0.05)
-            {
+                Vector2 pumpKinQueenSize = pumpkinQueen.GetComponent<BoxCollider2D>().bounds.size;
+                if (xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f
+                && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + 0.05
+                && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - 0.05f
+                && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + 0.05)
+                {
+                }
+                else
+                {
+                    break;
+                }
+                if (dontBreak >= 60)
+                {
+                    break;
+                }
             }
-            else
-            {
-                break;
-            }
-            if (dontBreak >= 60)
-            {
-                break;
-            }
+
+            var newPumpk = Instantiate(RandomizeNextPumpkin());
+            pumpKins.Add(newPumpk);
+            StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
         }
-
-        //Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
-        var newPumpk = Instantiate(RandomizeNextPumpkin());
-        pumpKins.Add(newPumpk);
-        StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
     }
 
     private IEnumerator ThrowInArc(
@@ -155,6 +161,18 @@ public class PumpkinSpawner : MonoBehaviour
         lv2SpawnChance = lv2Chance;
         lv3SpawnChance = lv3Chance;
         lv4SpawnChance = lv4Chance;
+    }
+
+    private void PumpkinMessageReceived(GameObject newPumpkin, bool getsAdded)
+    {
+        if (getsAdded)
+        {
+            pumpKins.Add(newPumpkin);
+        }
+        else
+        {
+            pumpKins.Remove(newPumpkin);
+        }
     }
 
     private void FasterSpawnRate()

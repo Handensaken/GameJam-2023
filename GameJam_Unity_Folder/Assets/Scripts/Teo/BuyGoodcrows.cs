@@ -59,7 +59,7 @@ public class BuyGoodcrows : MonoBehaviour
         if (goodCrows.Count > 0)
         {
             goodCrows[0].SetActive(true);
-            goodCrows.RemoveAt(0);
+            goodCrows.Remove(goodCrows[0]);
         }
     }
 }

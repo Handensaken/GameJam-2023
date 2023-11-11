@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2554f8e6380e18e4d8a0a000077e2dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pumpkinListEvent: {fileID: 11400000, guid: f4e989d23fcc4fd4dbc70899faf7851f, type: 2}
   nextPumpkin: {fileID: 6286239554040729622, guid: 00ba938dd0a01d1489053f548a1c0852, type: 3}
   level: 7
 --- !u!114 &-3454978159275338015
