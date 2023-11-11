@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 887e3833af1488b47824fd92e4367c6b, type: 3}
-  m_Name: PlayerMoney
+  m_Script: {fileID: 11500000, guid: 1b450966738631848b3dc3815457cc27, type: 3}
+  m_Name: UnlockedGuardianScarecrow
   m_EditorClassIdentifier: 
-  money: 1004865
