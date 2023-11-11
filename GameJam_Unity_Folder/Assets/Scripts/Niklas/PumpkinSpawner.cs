@@ -8,7 +8,20 @@ using UnityEngine;
 public class PumpkinSpawner : MonoBehaviour
 {
     public float spawnSpeed;
-    public GameObject pumpkinSpawnObject;
+    [Space(8)]
+    public GameObject lv1Pumpkin;
+    private int lv1SpawnChance;
+
+    public GameObject lv2Pumpkin;
+    private int lv2SpawnChance;
+    
+    public GameObject lv3Pumpkin;
+    private int lv3SpawnChance;
+    
+    public GameObject lv4Pumpkin;
+    private int lv4SpawnChance;
+    
+    [Space(8)]
     public GameObject pumpkinQueen;
     private Vector3 screenCoordinates;
     public float inset = 0;
@@ -78,7 +91,7 @@ public class PumpkinSpawner : MonoBehaviour
         }
 
         //Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
-        var newPumpk = Instantiate(pumpkinSpawnObject);
+        var newPumpk = Instantiate(lv1Pumpkin);
         StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
     }
 
