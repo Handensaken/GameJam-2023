@@ -54,7 +54,7 @@ public class FriendScarecrow : MonoBehaviour
         if (mouseButtonReleased)
         {
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
-            if (enemyScareCrow != null && enemyScareCrow.inCombat != true)
+            if (enemyScareCrow != null && enemyScareCrow.inCombat != true && enemyScareCrow._satisfied == false)
             {
                 enemyScareCrow.inCombat = true;
                 target = enemyScareCrow;
