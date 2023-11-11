@@ -9,7 +9,7 @@ public class Merging : MonoBehaviour
     public int level;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
-    private static bool mouseButtonReleased;
+    public static bool mouseButtonReleased = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,8 +51,13 @@ public class Merging : MonoBehaviour
                     Destroy(gameObject);
                 }
             }
-
+            EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
+            if (enemyScareCrow != null){
+                Destroy(gameObject);
+                enemyScareCrow._satisfied = true;
+                enemyScareCrow.getHead(GetComponent<Sprite>());
+            }
         }
-
+        mouseButtonReleased = false;
     }
 }

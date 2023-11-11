@@ -7,10 +7,11 @@ public class EnemyScareCrow : MonoBehaviour
     [SerializeField] private MotherPumpkinHP motherPumpkinHP;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int hungerDamage = 10;
+    private bool inCombat;
 
     public GameObject target;
 
-    private bool _satisfied = false;
+    public bool _satisfied = false;
 
     void FixedUpdate()
     {
@@ -31,6 +32,9 @@ public class EnemyScareCrow : MonoBehaviour
         {
             motherPumpkinHP.LoseHealth(hungerDamage);
             _satisfied = true;
-        }
+        }        
+    }
+    public void getHead(Sprite sprite){
+
     }
 }
