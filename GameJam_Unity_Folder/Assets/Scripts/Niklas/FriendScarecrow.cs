@@ -20,6 +20,7 @@ public class FriendScarecrow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(mouseButtonReleased);
         if (target != null)
         {
             currentTime += Time.deltaTime;
@@ -32,9 +33,13 @@ public class FriendScarecrow : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        mouseButtonReleased = false;
-        offsetX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
-        offsetY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+        if (target == null)
+        {
+            mouseButtonReleased = false;
+            offsetX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+            offsetY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+
+        }
     }
     private void OnMouseDrag()
     {
@@ -47,15 +52,14 @@ public class FriendScarecrow : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (mouseButtonReleased)
+        if (mouseButtonReleased != false)
         {
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
-            if (enemyScareCrow != null && enemyScareCrow.inCombat != true)
+            if (enemyScareCrow != null && enemyScareCrow.inCombat != true && enemyScareCrow._satisfied == false)
             {
                 enemyScareCrow.inCombat = true;
                 target = enemyScareCrow;
             }
         }
-        mouseButtonReleased = false;
     }
 }
