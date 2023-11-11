@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Merging : MonoBehaviour
@@ -62,10 +63,18 @@ public class Merging : MonoBehaviour
                 enemyScareCrow._satisfied = true;
                 enemyScareCrow.getHead(GetComponent<Sprite>());
             }
+            else
+            {
+                FriendScarecrow friendScarecrow = collision.GetComponent<FriendScarecrow>();
+                if (friendScarecrow != null && friendScarecrow.active == false)
+                {
+                    friendScarecrow.setLevel(level);
+                    FruitSuicide();
+                }
+            }
+            mouseButtonReleased = false;
         }
-        mouseButtonReleased = false;
     }
-
     public void FruitSuicide()
     {
         Debug.Log("New fruit, new me!");

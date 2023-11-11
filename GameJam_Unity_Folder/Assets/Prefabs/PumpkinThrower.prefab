@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5353309847967352113
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2048060463696587934}
+  - component: {fileID: 2110252002570914257}
+  - component: {fileID: 8843882196582749973}
+  m_Layer: 0
+  m_Name: PumpkinThrower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2048060463696587934
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353309847967352113}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2110252002570914257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353309847967352113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 698052ca9c039024bb862b34819c040a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnSpeed: 7
+  spawnLimit: 8
+  lv1Pumpkin: {fileID: 1348795603537961348, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
+  lv2Pumpkin: {fileID: 5324422241358162313, guid: ba069cd35dcdf7d458bf0a76a6f82041, type: 3}
+  lv3Pumpkin: {fileID: 7260821681945613947, guid: aa42a5b5179647f40834f83c928958b0, type: 3}
+  lv4Pumpkin: {fileID: 2556209885231610311, guid: 80b87cff7ef83944197f878dd50f55cd, type: 3}
+  pumpkinQueen: {fileID: 0}
+  inset: 3
+  throwTime: 0.7
+  throwDistanceArc:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5481053
+      value: 0.8146518
+      inSlope: 0.6490325
+      outSlope: 0.6490325
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.7165952
+    - serializedVersion: 3
+      time: 0.7968918
+      value: 0.9024161
+      inSlope: 0.7753822
+      outSlope: 0.7753822
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.58970976
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.022620395
+      outSlope: 0.022620395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  throwHeightArc:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.27266374
+      value: 0.46459574
+      inSlope: 0.74422634
+      outSlope: 0.74422634
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.55056524
+    - serializedVersion: 3
+      time: 0.63456196
+      value: 0.32706618
+      inSlope: -2.110076
+      outSlope: -2.110076
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.37408864
+      outWeight: 0.14486189
+    - serializedVersion: 3
+      time: 0.7565069
+      value: -0.07489747
+      inSlope: 0.3361024
+      outSlope: 0.3361024
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.88273627
+      value: 0.053543724
+      inSlope: 0.61252886
+      outSlope: 0.61252886
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.0009384155
+      inSlope: -0.38622224
+      outSlope: -0.38622224
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  arcHeightMultiplier: 9
+  throwInArcSO: {fileID: 11400000, guid: 808982e5276024141b0fa4045ab21239, type: 2}
+  buyFasterSpawning: {fileID: 11400000, guid: 87e45a8e8b0a1344b8230033b583fd14, type: 2}
+  newOddsEvent: {fileID: 11400000, guid: c193b6795de462d47a2cdcc15f6d3029, type: 2}
+  pumpkinListChangeEvent: {fileID: 11400000, guid: f4e989d23fcc4fd4dbc70899faf7851f, type: 2}
+--- !u!114 &8843882196582749973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5353309847967352113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c9218f97e4ab74f96e58493c84a55f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tickTime: 10
