@@ -21,4 +21,7 @@ public class Scenehandler_DesignVer : MonoBehaviour
     {
         SceneManager.LoadScene("Main Scene");
     }
+    public void ExitGae(){
+        Application.Quit();
+    }
 }
