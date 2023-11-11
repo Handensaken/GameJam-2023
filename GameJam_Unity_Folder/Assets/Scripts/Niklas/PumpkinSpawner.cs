@@ -12,9 +12,10 @@ using UnityEngine;
 public class PumpkinSpawner : MonoBehaviour
 {
     //[NonSerialized]
-    public List<GameObject> pumpKins = new List<GameObject>();
+    //public List<GameObject> pumpKins = new List<GameObject>();
 
     public float spawnSpeed;
+    private int currentSpawnAmount = 0;
     public int spawnLimit = 18;
     [Space(8)]
     public GameObject lv1Pumpkin;
@@ -44,7 +45,7 @@ public class PumpkinSpawner : MonoBehaviour
     [SerializeField] private VoidEventSO throwInArcSO;
     [SerializeField] private VoidEventSO buyFasterSpawning;
     [SerializeField] private SendNewPercentEventSO newOddsEvent;
-    [SerializeField] private TotalListCheckEvent pumpkinListChangeEvent;
+    [SerializeField] private IntEvent pumpkinListChangeEvent;
 
 
     void Start()
@@ -78,7 +79,7 @@ public class PumpkinSpawner : MonoBehaviour
 
     public void spawn()
     {
-        if (pumpKins.Count < spawnLimit)
+        if (currentSpawnAmount < spawnLimit)
         {
             float xPos;
             float yPos;
@@ -107,7 +108,7 @@ public class PumpkinSpawner : MonoBehaviour
             }
 
             var newPumpk = Instantiate(RandomizeNextPumpkin());
-            pumpKins.Add(newPumpk);
+            currentSpawnAmount++;
             StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
         }
     }
@@ -163,16 +164,10 @@ public class PumpkinSpawner : MonoBehaviour
         lv4SpawnChance = lv4Chance;
     }
 
-    private void PumpkinMessageReceived(GameObject newPumpkin, bool getsAdded)
+    private void PumpkinMessageReceived(int amount)
     {
-        if (getsAdded)
-        {
-            pumpKins.Add(newPumpkin);
-        }
-        else
-        {
-            pumpKins.Remove(newPumpkin);
-        }
+        currentSpawnAmount += amount;
+        Debug.Log("Got the message");
     }
 
     private void FasterSpawnRate()

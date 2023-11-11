@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Merging : MonoBehaviour
 {
-    [SerializeField] private TotalListCheckEvent pumpkinListEvent;
+    [SerializeField] private IntEvent pumpkinListEvent;
     public GameObject nextPumpkin;
     public int level;
     private Vector2 mousePosition;
@@ -40,7 +40,7 @@ public class Merging : MonoBehaviour
                     Instantiate(nextPumpkin, transform.position, quaternion.identity);
 
                     Debug.LogWarning("One!");
-                    pumpkinListEvent.RaiseEvent(nextPumpkin, true);
+                    pumpkinListEvent.RaiseEvent(1);
                     //Debug.LogWarning("Two!");
                     //pumpkinListEvent.RaiseEvent(collision.gameObject, false);
                     //Debug.LogWarning("Three!");
@@ -57,7 +57,7 @@ public class Merging : MonoBehaviour
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
             if (enemyScareCrow != null && enemyScareCrow._satisfied != true)
             {
-                pumpkinListEvent.RaiseEvent(gameObject, false);
+                pumpkinListEvent.RaiseEvent(-1);
                 Destroy(gameObject);
                 enemyScareCrow._satisfied = true;
                 enemyScareCrow.getHead(GetComponent<Sprite>());
@@ -69,7 +69,7 @@ public class Merging : MonoBehaviour
     public void FruitSuicide()
     {
         Debug.Log("New fruit, new me!");
-        pumpkinListEvent.RaiseEvent(gameObject, false);
+        pumpkinListEvent.RaiseEvent(-1);
         Destroy(gameObject);
     }
 }
