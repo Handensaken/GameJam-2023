@@ -1784,6 +1784,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5660288167294968059, guid: b8a7168d1b8143c4b9cd5b1a1c0edd2f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3316,6 +3320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698052ca9c039024bb862b34819c040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pumpKins: []
   spawnSpeed: 9
   lv1Pumpkin: {fileID: 1348795603537961348, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
   lv2Pumpkin: {fileID: 5324422241358162313, guid: ba069cd35dcdf7d458bf0a76a6f82041, type: 3}
