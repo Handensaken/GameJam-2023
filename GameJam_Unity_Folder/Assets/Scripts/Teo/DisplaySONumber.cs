@@ -11,6 +11,6 @@ public class DisplaySONumber : MonoBehaviour
     
     void Update()
     {
-        displayText.text = moneyContainer.money.ToString();
+        displayText.text = Money.money.ToString();
     }
 }

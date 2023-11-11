@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class moneyMaking : MonoBehaviour
 {
-    public Money playerMoney;
     public int moneyPerTick = 1;
 
     
@@ -20,6 +19,6 @@ public class moneyMaking : MonoBehaviour
         
     }
     public void makeMoney(){
-        playerMoney.money += moneyPerTick;
+        Money.money += moneyPerTick;
     }
 }

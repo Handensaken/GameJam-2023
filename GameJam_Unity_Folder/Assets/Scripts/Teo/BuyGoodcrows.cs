@@ -33,9 +33,9 @@ public class BuyGoodcrows : MonoBehaviour
 
     public void BuyNextUpgrade()
     {
-        if (playerSeeds.money >= currentCost && !fullyUpgraded)
+        if (Money.money >= currentCost && !fullyUpgraded)
         {
-            playerSeeds.money -= currentCost;
+            Money.money -= currentCost;
             //buyThisEvent.RaiseEvent();
             ActivateNextGoodcrow();
             upgradeStepCounter++;

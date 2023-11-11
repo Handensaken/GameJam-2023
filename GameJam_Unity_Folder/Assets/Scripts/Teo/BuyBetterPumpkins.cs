@@ -36,9 +36,9 @@ public class BuyBetterPumpkins : MonoBehaviour
 
     public void BuyNextUpgrade()
     {
-        if (playerSeeds.money >= currentCost && !fullyUpgraded)
+        if (Money.money >= currentCost && !fullyUpgraded)
         {
-            playerSeeds.money -= currentCost;
+            Money.money -= currentCost;
             buyThisPercentEvent.RaiseEvent((int)currentOdds.x, (int)currentOdds.y, (int)currentOdds.z, (int)currentOdds.w);
             currentOdds = NextOdds();
             upgradeStepCounter++;

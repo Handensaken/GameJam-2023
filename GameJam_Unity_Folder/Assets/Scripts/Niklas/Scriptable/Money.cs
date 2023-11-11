@@ -1,7 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
-[CreateAssetMenu]
-public class Money : ScriptableObject
+public class Money : MonoBehaviour
 {
-    public int money = 0;
+    public static int money = 0;
 }
