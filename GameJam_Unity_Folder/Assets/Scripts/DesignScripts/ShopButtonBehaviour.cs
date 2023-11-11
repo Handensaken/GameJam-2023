@@ -17,9 +17,12 @@ public class ShopButtonBehaviour : MonoBehaviour
         
     }
     public void OpenShop(){
-        shop.SetActive(true);
+        shop.SetActive(!shop.active);
     }
     public void CloseShop(){
         shop.SetActive(false);
+    }
+    public void TriggerTestButton(){
+        Debug.Log("button is working");
     }
 }
