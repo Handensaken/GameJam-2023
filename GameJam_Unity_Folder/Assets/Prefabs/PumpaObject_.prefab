@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextPumpkin: {fileID: 6640377317448707804, guid: 43ded340d639ac448891944eb8ff9275, type: 3}
+  level: 1
 --- !u!114 &8539382983598872022
 MonoBehaviour:
   m_ObjectHideFlags: 0

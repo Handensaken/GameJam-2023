@@ -6,6 +6,7 @@ using UnityEngine;
 public class Merging : MonoBehaviour
 {
     public GameObject nextPumpkin;
+    public int level;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
     private static bool mouseButtonReleased;
@@ -39,13 +40,8 @@ public class Merging : MonoBehaviour
     {
         if (mouseButtonReleased)
         {
-            string thisGameobjectName;
-            string collisionGameobjectName;
-
-            thisGameobjectName = gameObject.name.Substring(0, name.IndexOf("_"));
-            collisionGameobjectName = collision.gameObject.name.Substring(0, name.IndexOf("_"));
-
-            if (thisGameobjectName == collisionGameobjectName)
+            var mergingScript = collision.gameObject.GetComponent<Merging>();
+            if (mergingScript != null && level == mergingScript.level)
             {
                 if (nextPumpkin != null)
                 {
