@@ -45,8 +45,8 @@ public class PumpkinSpawner : MonoBehaviour
         while (true)
         {
             dontBreak++;
-            xPos = UnityEngine.Random.Range(-screenCoordinates.x, screenCoordinates.x);
-            yPos = UnityEngine.Random.Range(-screenCoordinates.y, screenCoordinates.y);
+            xPos = UnityEngine.Random.Range(-screenCoordinates.x + inset, screenCoordinates.x - inset);
+            yPos = UnityEngine.Random.Range(-screenCoordinates.y + inset, screenCoordinates.y - inset);
 
             Vector2 pumpKinQueenSize = pumpkinQueen.GetComponent<BoxCollider2D>().bounds.size;
             if(xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f 
