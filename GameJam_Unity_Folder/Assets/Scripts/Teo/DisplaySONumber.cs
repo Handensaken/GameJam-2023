@@ -6,7 +6,6 @@ using UnityEngine;
 public class DisplaySONumber : MonoBehaviour
 {
     [SerializeField] private TMP_Text displayText;
-    [SerializeField] private Money moneyContainer;
 
     
     void Update()
