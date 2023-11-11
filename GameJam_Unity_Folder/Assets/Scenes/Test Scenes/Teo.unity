@@ -341,6 +341,9 @@ MonoBehaviour:
   motherPumpkinHP: {fileID: 11400000, guid: 0e6cee656eff60741a1fb142ddee7e98, type: 2}
   speed: 1
   hungerDamage: 240
+  inCombat: 0
+  stats: {fileID: 0}
+  scareCrowHP: 0
   target: {fileID: 1175426899}
   _satisfied: 0
 --- !u!212 &389644838
@@ -2003,7 +2006,6 @@ GameObject:
   - component: {fileID: 1245448852}
   - component: {fileID: 1245448851}
   - component: {fileID: 1245448850}
-  - component: {fileID: 1245448853}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2085,18 +2087,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1245448853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1245448849}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e05f1492a7349e47be6e27f4c83678c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1327881649
 GameObject:
   m_ObjectHideFlags: 0
@@ -2856,6 +2846,7 @@ GameObject:
   - component: {fileID: 1983035780}
   - component: {fileID: 1983035779}
   - component: {fileID: 1983035778}
+  - component: {fileID: 1983035781}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -2926,7 +2917,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1983035779}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1983035781}
+        m_TargetAssemblyTypeName: BuyBetterPumpkins, Assembly-CSharp
+        m_MethodName: BuyNextUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1983035779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2965,6 +2968,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983035776}
   m_CullTransparentMesh: 1
+--- !u!114 &1983035781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983035776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 982aa6bcf0384704dbf097589a92f6f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyThisPercentEvent: {fileID: 11400000, guid: c193b6795de462d47a2cdcc15f6d3029, type: 2}
+  playerSeeds: {fileID: 11400000, guid: 4fb4e5e860357e04f8597e6060484082, type: 2}
+  costDisplayText: {fileID: 1419071658}
+  buyButton: {fileID: 1983035778}
+  costs: e80300001027000050c30000
+  odds:
+  - {x: 90, y: 10, z: 0, w: 0}
+  - {x: 75, y: 15, z: 10, w: 0}
+  - {x: 50, y: 25, z: 15, w: 10}
 --- !u!1 &2014881706
 GameObject:
   m_ObjectHideFlags: 0
@@ -3011,7 +3035,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnSpeed: 9
-  pumpkinSpawnObject: {fileID: 6640377317448707804, guid: 43ded340d639ac448891944eb8ff9275, type: 3}
+  lv1Pumpkin: {fileID: 1348795603537961348, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
+  lv2Pumpkin: {fileID: 5324422241358162313, guid: ba069cd35dcdf7d458bf0a76a6f82041, type: 3}
+  lv3Pumpkin: {fileID: 7260821681945613947, guid: aa42a5b5179647f40834f83c928958b0, type: 3}
+  lv4Pumpkin: {fileID: 2556209885231610311, guid: 80b87cff7ef83944197f878dd50f55cd, type: 3}
   pumpkinQueen: {fileID: 1175426899}
   inset: 3
   throwTime: 0.7
@@ -3120,6 +3147,7 @@ MonoBehaviour:
   arcHeightMultiplier: 9
   throwInArcSO: {fileID: 11400000, guid: 808982e5276024141b0fa4045ab21239, type: 2}
   buyFasterSpawning: {fileID: 11400000, guid: 87e45a8e8b0a1344b8230033b583fd14, type: 2}
+  newOddsEvent: {fileID: 11400000, guid: c193b6795de462d47a2cdcc15f6d3029, type: 2}
 --- !u!114 &2014881710
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 881ae65dd0c647d468dfec8753337b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 0}
 --- !u!1 &389644834
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnSpeed: 1
-  pumpkinSpawnObject: {fileID: 1534297058798734157, guid: ede9ce2411307af49b377424673cb6f3, type: 3}
+  lv1Pumpkin: {fileID: 1348795603537961348, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
+  lv2Pumpkin: {fileID: 0}
+  lv3Pumpkin: {fileID: 0}
+  lv4Pumpkin: {fileID: 0}
   pumpkinQueen: {fileID: 1175426899}
   inset: 2
   throwTime: 0.7
@@ -1404,6 +1408,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   arcHeightMultiplier: 9
   throwInArcSO: {fileID: 11400000, guid: 808982e5276024141b0fa4045ab21239, type: 2}
+  buyFasterSpawning: {fileID: 11400000, guid: 87e45a8e8b0a1344b8230033b583fd14, type: 2}
 --- !u!114 &2014881710
 MonoBehaviour:
   m_ObjectHideFlags: 0
