@@ -13,21 +13,32 @@ public class PumpkinSpawner : MonoBehaviour
     private Vector3 screenCoordinates;
     public float inset = 0;
     private float currentTime = 0;
-    
+
     [SerializeField] private float throwTime = 1f;
     [SerializeField] private AnimationCurve throwDistanceArc;
     [SerializeField] private AnimationCurve throwHeightArc;
     [SerializeField] private float arcHeightMultiplier = 3f;
-    
+
     [Space(6)]
     [SerializeField] private VoidEventSO throwInArcSO;
-    // Start is called before the first frame update
+    [SerializeField] private VoidEventSO buyFasterSpawning;
+
+
     void Start()
     {
         screenCoordinates = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        buyFasterSpawning.OnEventRaised += FasterSpawnRate;
+    }
+
+    private void OnDisable()
+    {
+        buyFasterSpawning.OnEventRaised -= FasterSpawnRate;
+    }
+
     void Update()
     {
         currentTime += Time.deltaTime;
@@ -37,6 +48,7 @@ public class PumpkinSpawner : MonoBehaviour
             currentTime = 0;
         }
     }
+
     public void spawn()
     {
         float xPos;
@@ -49,15 +61,18 @@ public class PumpkinSpawner : MonoBehaviour
             yPos = UnityEngine.Random.Range(-screenCoordinates.y + inset, screenCoordinates.y - inset);
 
             Vector2 pumpKinQueenSize = pumpkinQueen.GetComponent<BoxCollider2D>().bounds.size;
-            if(xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f 
-            && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + 0.05 
-            && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - 0.05f 
-            && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + 0.05){
+            if (xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f
+            && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + 0.05
+            && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - 0.05f
+            && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + 0.05)
+            {
             }
-            else {
+            else
+            {
                 break;
             }
-            if (dontBreak >= 60){
+            if (dontBreak >= 60)
+            {
                 break;
             }
         }
@@ -77,13 +92,19 @@ public class PumpkinSpawner : MonoBehaviour
         throwInArcSO.RaiseEvent();
         float currentTime = 0f;
 
-        do{
+        do
+        {
             currentTime += Time.deltaTime / arcThrowTime;
             mover.position = Vector2.Lerp(start, end, throwDistanceArc.Evaluate(currentTime));
             mover.position += new Vector3(0f, (throwHeightArc.Evaluate(currentTime)) * arcHeightMultiplier, 0f);
             yield return null;
-        }while(currentTime < 1f);
-        
+        } while (currentTime < 1f);
+
         mover.position = end;
+    }
+
+    private void FasterSpawnRate()
+    {
+        spawnSpeed -= 1f;
     }
 }
