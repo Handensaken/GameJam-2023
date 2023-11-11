@@ -7,7 +7,7 @@ public class FriendScarecrow : MonoBehaviour
     private float offsetX, offsetY;
     public static bool mouseButtonReleased = false;
     private Vector2 mousePosition;
-    public EnemyScareCrow target;
+    private EnemyScareCrow target;
     private float timer = 0.25f;
     private float currentTime;
 
