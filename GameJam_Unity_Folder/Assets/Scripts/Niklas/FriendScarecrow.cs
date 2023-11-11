@@ -20,6 +20,7 @@ public class FriendScarecrow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(mouseButtonReleased);
         if (target != null)
         {
             currentTime += Time.deltaTime;
@@ -51,7 +52,7 @@ public class FriendScarecrow : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (mouseButtonReleased)
+        if (mouseButtonReleased != false)
         {
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
             if (enemyScareCrow != null && enemyScareCrow.inCombat != true && enemyScareCrow._satisfied == false)
@@ -60,6 +61,5 @@ public class FriendScarecrow : MonoBehaviour
                 target = enemyScareCrow;
             }
         }
-        mouseButtonReleased = false;
     }
 }

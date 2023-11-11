@@ -9,11 +9,11 @@ public class Merging : MonoBehaviour
     public int level;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
-    public static bool mouseButtonReleased = false;
+    private bool mouseButtonReleased = false;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -35,6 +35,7 @@ public class Merging : MonoBehaviour
     private void OnMouseUp()
     {
         mouseButtonReleased = true;
+        Debug.Log("hej");
     }
     private void OnTriggerStay2D(Collider2D collision)
     {
