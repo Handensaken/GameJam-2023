@@ -1,6 +1,7 @@
+//using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel;
+//using System.Collections.Generic;
+//using System.ComponentModel;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,17 +11,17 @@ public class PumpkinSpawner : MonoBehaviour
     public float spawnSpeed;
     [Space(8)]
     public GameObject lv1Pumpkin;
-    private int lv1SpawnChance;
+    private int lv1SpawnChance = 100;
 
     public GameObject lv2Pumpkin;
-    private int lv2SpawnChance;
-    
+    private int lv2SpawnChance = 0;
+
     public GameObject lv3Pumpkin;
-    private int lv3SpawnChance;
-    
+    private int lv3SpawnChance = 0;
+
     public GameObject lv4Pumpkin;
-    private int lv4SpawnChance;
-    
+    private int lv4SpawnChance = 0;
+
     [Space(8)]
     public GameObject pumpkinQueen;
     private Vector3 screenCoordinates;
@@ -35,6 +36,7 @@ public class PumpkinSpawner : MonoBehaviour
     [Space(6)]
     [SerializeField] private VoidEventSO throwInArcSO;
     [SerializeField] private VoidEventSO buyFasterSpawning;
+    [SerializeField] private SendNewPercentEventSO newOddsEvent;
 
 
     void Start()
@@ -45,11 +47,13 @@ public class PumpkinSpawner : MonoBehaviour
     private void OnEnable()
     {
         buyFasterSpawning.OnEventRaised += FasterSpawnRate;
+        newOddsEvent.OnEventRaised += AdjustSpawnOdds;
     }
 
     private void OnDisable()
     {
         buyFasterSpawning.OnEventRaised -= FasterSpawnRate;
+        newOddsEvent.OnEventRaised -= AdjustSpawnOdds;
     }
 
     void Update()
@@ -91,7 +95,7 @@ public class PumpkinSpawner : MonoBehaviour
         }
 
         //Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
-        var newPumpk = Instantiate(lv1Pumpkin);
+        var newPumpk = Instantiate(RandomizeNextPumpkin());
         StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
     }
 
@@ -114,6 +118,36 @@ public class PumpkinSpawner : MonoBehaviour
         } while (currentTime < 1f);
 
         mover.position = end;
+    }
+
+    private GameObject RandomizeNextPumpkin()
+    {
+        int rand = UnityEngine.Random.Range(1, 101);
+
+        if (rand <= lv1SpawnChance)
+        {
+            return lv1Pumpkin;
+        }
+        else if (rand - lv1SpawnChance <= lv2SpawnChance)
+        {
+            return lv2Pumpkin;
+        }
+        else if (rand - lv1SpawnChance - lv2SpawnChance <= lv3SpawnChance)
+        {
+            return lv3Pumpkin;
+        }
+        else
+        {
+            return lv4Pumpkin;
+        }
+    }
+
+    private void AdjustSpawnOdds(int lv1Chance, int lv2Chance, int lv3Chance, int lv4Chance)
+    {
+        lv1SpawnChance = lv1Chance;
+        lv2SpawnChance = lv2Chance;
+        lv3SpawnChance = lv3Chance;
+        lv4SpawnChance = lv4Chance;
     }
 
     private void FasterSpawnRate()
