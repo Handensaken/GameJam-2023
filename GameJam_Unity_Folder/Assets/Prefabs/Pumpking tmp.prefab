@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2797060174208869955}
   - component: {fileID: 2942345875256958675}
   - component: {fileID: 5963694429255223001}
+  - component: {fileID: -762107118775819420}
   m_Layer: 0
   m_Name: Pumpking tmp
   m_TagString: Untagged
@@ -173,3 +174,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextPumpkin: {fileID: 0}
   level: 10
+--- !u!114 &-762107118775819420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8566867511731557652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a29ccf6f698f174b919ad95162ca7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoney: {fileID: 11400000, guid: 4fb4e5e860357e04f8597e6060484082, type: 2}
+  moneyPerTick: 1

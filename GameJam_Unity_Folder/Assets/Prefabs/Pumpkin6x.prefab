@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5450393922150143560}
   - component: {fileID: 5015124242936756061}
   - component: {fileID: 3082503073003148400}
+  - component: {fileID: -8749978539376076078}
   m_Layer: 0
   m_Name: Pumpkin6x
   m_TagString: Untagged
@@ -173,3 +174,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextPumpkin: {fileID: 7041628632305483581, guid: f7bd74d6830d19a49811c4014580c7d9, type: 3}
   level: 6
+--- !u!114 &-8749978539376076078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247069348306835160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a29ccf6f698f174b919ad95162ca7d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerMoney: {fileID: 11400000, guid: 4fb4e5e860357e04f8597e6060484082, type: 2}
+  moneyPerTick: 1

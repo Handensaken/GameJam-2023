@@ -1,5 +1,8 @@
 //using System;
+using System;
 using System.Collections;
+using System.Collections.Generic;
+
 //using System.Collections.Generic;
 //using System.ComponentModel;
 using Unity.Mathematics;
@@ -8,6 +11,9 @@ using UnityEngine;
 
 public class PumpkinSpawner : MonoBehaviour
 {
+    //[NonSerialized]
+    public List<GameObject> pumpKins = new List<GameObject>();
+
     public float spawnSpeed;
     [Space(8)]
     public GameObject lv1Pumpkin;
@@ -23,9 +29,9 @@ public class PumpkinSpawner : MonoBehaviour
     private int lv4SpawnChance = 0;
 
     [Space(8)]
-    public GameObject pumpkinQueen;
+    [SerializeField] private GameObject pumpkinQueen;
     private Vector3 screenCoordinates;
-    public float inset = 0;
+    [SerializeField] private float inset = 0;
     private float currentTime = 0;
 
     [SerializeField] private float throwTime = 1f;
@@ -96,6 +102,7 @@ public class PumpkinSpawner : MonoBehaviour
 
         //Instantiate(pumpkinSpawnObject, new Vector3(xPos, yPos, 0), quaternion.identity);
         var newPumpk = Instantiate(RandomizeNextPumpkin());
+        pumpKins.Add(newPumpk);
         StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
     }
 
