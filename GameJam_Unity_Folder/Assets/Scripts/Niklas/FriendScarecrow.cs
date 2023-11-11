@@ -7,7 +7,7 @@ public class FriendScarecrow : MonoBehaviour
     private float offsetX, offsetY;
     public static bool mouseButtonReleased = false;
     private Vector2 mousePosition;
-    private EnemyScareCrow target;
+    public EnemyScareCrow target;
     private float timer = 0.25f;
     private float currentTime;
 
@@ -32,9 +32,13 @@ public class FriendScarecrow : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        mouseButtonReleased = false;
-        offsetX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
-        offsetY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+        if (target == null)
+        {
+            mouseButtonReleased = false;
+            offsetX = Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x;
+            offsetY = Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y;
+
+        }
     }
     private void OnMouseDrag()
     {
