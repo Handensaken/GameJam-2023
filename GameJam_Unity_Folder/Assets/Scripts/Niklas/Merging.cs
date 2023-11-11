@@ -52,7 +52,7 @@ public class Merging : MonoBehaviour
                 }
             }
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
-            if (enemyScareCrow != null){
+            if (enemyScareCrow != null && enemyScareCrow._satisfied != true){
                 Destroy(gameObject);
                 enemyScareCrow._satisfied = true;
                 enemyScareCrow.getHead(GetComponent<Sprite>());
