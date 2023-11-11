@@ -8,17 +8,17 @@ public class EnemyScareCrow : MonoBehaviour
     [SerializeField] private MotherPumpkinHP motherPumpkinHP;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int hungerDamage = 10;
-    public bool inCombat = false;
-    //[NonSerialized]
-    public enemyScareCrowStats stats;
     public int scareCrowHP;
 
-    public GameObject target;
+    public bool inCombat = false;
+    //[NonSerialized]
+    //public enemyScareCrowStats stats;
+    [HideInInspector] public GameObject target;
 
     public bool _satisfied = false;
     void Start()
     {
-        scareCrowHP = stats.maxHp;
+        //scareCrowHP = stats.maxHp;
     }
 
     void FixedUpdate()
@@ -49,8 +49,11 @@ public class EnemyScareCrow : MonoBehaviour
             _satisfied = true;
         }
     }
-    public void getHead(Sprite sprite)
-    {
 
+    public void AssignRankValues(int hp, float moveSpeed, int dmg)
+    {
+        scareCrowHP = hp;
+        speed = moveSpeed;
+        hungerDamage = dmg;
     }
 }

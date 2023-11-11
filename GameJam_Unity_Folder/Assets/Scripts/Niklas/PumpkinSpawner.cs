@@ -129,7 +129,7 @@ public class PumpkinSpawner : MonoBehaviour
             mover.position = Vector2.Lerp(start, end, throwDistanceArc.Evaluate(currentTime));
             mover.position += new Vector3(0f, (throwHeightArc.Evaluate(currentTime)) * arcHeightMultiplier, 0f);
             yield return null;
-        } while (currentTime < 1f);
+        } while (currentTime < 1f && mover != null);
 
         mover.position = end;
     }

@@ -61,7 +61,6 @@ public class Merging : MonoBehaviour
                 pumpkinListEvent.RaiseEvent(-1);
                 Destroy(gameObject);
                 enemyScareCrow._satisfied = true;
-                enemyScareCrow.getHead(GetComponent<Sprite>());
             }
             else
             {
