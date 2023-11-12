@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class BuyGoodcrows : MonoBehaviour
 {
+  //max adding sound effectos brothas
+    [SerializeField] private AudioSource source;
+
     //[SerializeField] private VoidEventSO buyThisEvent;
     [SerializeField] private TMP_Text costDisplayText;
     [SerializeField] private Button buyButton;
@@ -41,6 +44,9 @@ public class BuyGoodcrows : MonoBehaviour
             ActivateNextGoodcrow();
             upgradeStepCounter++;
 
+            //playing sound
+            source.Play();
+            
             if (upgradeStepCounter >= costs.Count)
             {
                 fullyUpgraded = true;

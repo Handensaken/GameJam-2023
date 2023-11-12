@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class BuyBetterPumpkins : MonoBehaviour
 {
+    //max adding sound effectos brothas
+    [SerializeField] private AudioSource source;
+
     [SerializeField] private SendNewPercentEventSO buyThisPercentEvent;
     [SerializeField] private TMP_Text costDisplayText;
     [SerializeField] private Button buyButton;
@@ -41,6 +44,9 @@ public class BuyBetterPumpkins : MonoBehaviour
             buyThisPercentEvent.RaiseEvent((int)currentOdds.x, (int)currentOdds.y, (int)currentOdds.z, (int)currentOdds.w);
             currentOdds = NextOdds();
             upgradeStepCounter++;
+
+            //playing sound
+            source.Play();
 
             if (upgradeStepCounter >= costs.Count)
             {
