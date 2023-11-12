@@ -18,10 +18,13 @@ public class moneyMaking : MonoBehaviour
     {
 
     }
-    
+
     public void makeMoney()
     {
         Money.money += moneyPerTick;
-        chachingEffect.Play();
+        if (chachingEffect != null)
+        {
+            chachingEffect.Play();
+        }
     }
 }
