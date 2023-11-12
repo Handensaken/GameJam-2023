@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class EnemyScareCrow : MonoBehaviour
 {
-    [SerializeField] private MotherPumpkinHP motherPumpkinHP;
+    //[SerializeField] private MotherPumpkinHP motherPumpkinHP;
     [SerializeField] private float speed = 5f;
     [SerializeField] private int hungerDamage = 10;
     public int scareCrowHP;
+    public int pumpkinCraving = 1;
     private Animator anim;
-    public bool inCombat = false;
+    [HideInInspector] public bool inCombat = false;
     //[NonSerialized]
     //public enemyScareCrowStats stats;
     [HideInInspector] public GameObject target;
 
-    public bool _satisfied = false;
+    [HideInInspector] public bool _satisfied = false;
+
     void Start()
     {
         //Max trademark animation insertion
@@ -58,8 +60,9 @@ public class EnemyScareCrow : MonoBehaviour
         }
     }
 
-    public void AssignRankValues(int hp, float moveSpeed, int dmg)
+    public void AssignRankValues(int pumpkinCraveingLevel, int hp, float moveSpeed, int dmg)
     {
+        pumpkinCraving = pumpkinCraveingLevel;
         scareCrowHP = hp;
         speed = moveSpeed;
         hungerDamage = dmg;

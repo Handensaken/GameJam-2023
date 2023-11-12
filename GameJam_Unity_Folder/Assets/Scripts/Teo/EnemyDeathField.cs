@@ -6,7 +6,7 @@ public class EnemyDeathField : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("enemy"))
+        if (other.CompareTag("Enemy"))
         {
             Destroy(other.gameObject);
         }

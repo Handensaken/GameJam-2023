@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7e0e67f3fb0ec43ae8dbcb89694709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motherPumpkinHP: {fileID: 11400000, guid: 0e6cee656eff60741a1fb142ddee7e98, type: 2}
-  speed: 3
+  speed: 2
   hungerDamage: 10
   scareCrowHP: 100
+  pumpkinCraving: 1
   inCombat: 0
   target: {fileID: 0}
   _satisfied: 0

@@ -834,6 +834,30 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1175426899}
     - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: difficultyUpTime
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: spawnTimes.Array.data[0]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: spawnTimes.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: spawnTimes.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
+      propertyPath: spawnTimes.Array.data[3]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8644838597360830807, guid: 43c722db0fa38f14998bb4b16dd7a33e, type: 3}
       propertyPath: spawnPoints.Array.data[0]
       value: 
       objectReference: {fileID: 89650151}

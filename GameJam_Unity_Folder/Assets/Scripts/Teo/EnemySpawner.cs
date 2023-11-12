@@ -12,13 +12,13 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] enemyPrefabs;
     //Denna var det enda jag lade till här uppe
 
-    [SerializeField] private GameObject enemyPrefab; //5 levels of difficulty
+    //[SerializeField] private List<GameObject> enemyPrefabs = new List<GameObject>(); //5 levels of difficulty
     [SerializeField] private GameObject motherPumpkin;
     [Space(8)]
     [SerializeField] private List<Transform> spawnPoints = new List<Transform>();
     [SerializeField] private List<float> spawnTimes = new List<float>();
     [SerializeField] private List<int> enemyMaxRanks = new List<int>();
-    [SerializeField] private List<enemyScareCrowStats> enemyRankStats = new List<enemyScareCrowStats>();
+    //[SerializeField] private List<enemyScareCrowStats> enemyRankStats = new List<enemyScareCrowStats>();
     [SerializeField] private float difficultyUpTime = 120f;
 
     private List<Transform> _remainingSpawnPoints = new List<Transform>();
@@ -61,15 +61,14 @@ public class EnemySpawner : MonoBehaviour
     {
         int point = Random.Range(0, _remainingSpawnPoints.Count);
         int enemyRank = Random.Range(0, _enemyMaxRank);
-        GameObject enemy = enemyPrefab;
+        GameObject enemy = enemyPrefabs[enemyRank];
 
         //  Max suggestion 
         //  GameObject enemy = enemyPrefabs[enemyRank];
 
 
         enemy.GetComponent<EnemyScareCrow>().target = motherPumpkin;
-        enemy.GetComponent<EnemyScareCrow>().AssignRankValues(enemyRankStats[enemyRank].maxHp,
-            enemyRankStats[enemyRank].speed, enemyRankStats[enemyRank].hungerDamage);
+        //enemy.GetComponent<EnemyScareCrow>().AssignRankValues(enemyRankStats[enemyRank].pumpkinCraving, enemyRankStats[enemyRank].maxHp, enemyRankStats[enemyRank].speed, enemyRankStats[enemyRank].hungerDamage);
 
         Instantiate(enemy, _remainingSpawnPoints[point].position, Quaternion.identity);
 

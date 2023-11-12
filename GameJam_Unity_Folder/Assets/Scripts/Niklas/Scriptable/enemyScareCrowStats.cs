@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class enemyScareCrowStats : ScriptableObject
 {
+    public int pumpkinCraving;
     public int maxHp;
     public float speed;
     public int hungerDamage;

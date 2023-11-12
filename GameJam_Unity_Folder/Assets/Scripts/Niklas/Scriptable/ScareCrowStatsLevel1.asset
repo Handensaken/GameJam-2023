@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb38176f1fdd7142b29f056136caf45, type: 3}
   m_Name: ScareCrowStatsLevel1
   m_EditorClassIdentifier: 
+  pumpkinCraving: 1
   maxHp: 100
   speed: 3
   hungerDamage: 10

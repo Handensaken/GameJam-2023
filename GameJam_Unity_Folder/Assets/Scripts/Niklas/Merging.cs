@@ -67,7 +67,7 @@ public class Merging : MonoBehaviour
                 }
             }
             EnemyScareCrow enemyScareCrow = collision.GetComponent<EnemyScareCrow>();
-            if (enemyScareCrow != null && enemyScareCrow._satisfied != true)
+            if (enemyScareCrow != null && enemyScareCrow._satisfied != true && enemyScareCrow.pumpkinCraving <= level)
             {
                 pumpkinListEvent.RaiseEvent(-1);
                 Destroy(gameObject);
