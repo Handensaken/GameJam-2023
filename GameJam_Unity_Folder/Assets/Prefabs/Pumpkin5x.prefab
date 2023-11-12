@@ -124,7 +124,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2554f8e6380e18e4d8a0a000077e2dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 2979011658112276191, guid: b05124c67f35d3249b366a529019a456, type: 3}
   pumpkinListEvent: {fileID: 11400000, guid: f4e989d23fcc4fd4dbc70899faf7851f, type: 2}
   nextPumpkin: {fileID: 4247069348306835160, guid: c74ff7b0e184bd348bb41f3795e0c793, type: 3}
   level: 5
@@ -187,5 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a29ccf6f698f174b919ad95162ca7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoney: {fileID: 11400000, guid: 4fb4e5e860357e04f8597e6060484082, type: 2}
   moneyPerTick: 108

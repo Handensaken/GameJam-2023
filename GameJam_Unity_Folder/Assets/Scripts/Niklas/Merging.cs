@@ -6,12 +6,23 @@ using UnityEngine;
 
 public class Merging : MonoBehaviour
 {
+    //adding audio for merging
+    [SerializeField] AudioSource source;
+
     [SerializeField] private IntEvent pumpkinListEvent;
     public GameObject nextPumpkin;
     public int level;
     private Vector2 mousePosition;
     private float offsetX, offsetY;
     private bool mouseButtonReleased = false;
+
+    void Start(){
+        if(level > 1){
+            //This is really really bad for performance, but a reference doesn't work because unity thinks the audio source is disabled
+            source=GameObject.Find("MergeSoundController").GetComponent<AudioSource>();
+            source.Play();
+        }
+    }
 
     private void OnMouseDown()
     {
