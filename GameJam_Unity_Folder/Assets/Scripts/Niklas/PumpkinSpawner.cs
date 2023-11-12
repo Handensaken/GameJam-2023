@@ -50,6 +50,8 @@ public class PumpkinSpawner : MonoBehaviour
     [SerializeField] private IntEvent pumpkinListChangeEvent;
 
 
+    [SerializeField] private AudioSource source;
+
     void Start()
     {
         screenCoordinates = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -111,6 +113,7 @@ public class PumpkinSpawner : MonoBehaviour
 
             var newPumpk = Instantiate(RandomizeNextPumpkin());
             currentSpawnAmount++;
+            source.Play();
             StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
         }
     }
