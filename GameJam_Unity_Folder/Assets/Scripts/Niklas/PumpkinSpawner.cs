@@ -113,7 +113,10 @@ public class PumpkinSpawner : MonoBehaviour
 
             var newPumpk = Instantiate(RandomizeNextPumpkin());
             currentSpawnAmount++;
-            source.Play();
+            if (source != null)
+            {
+                source.Play();
+            }
             StartCoroutine(ThrowInArc(newPumpk.transform, pumpkinQueen.transform.position, new Vector2(xPos, yPos), throwTime));
         }
     }
