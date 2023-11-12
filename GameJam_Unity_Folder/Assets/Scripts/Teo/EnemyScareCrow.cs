@@ -47,13 +47,10 @@ public class EnemyScareCrow : MonoBehaviour
             }
             else
             {
-                Vector3 moveAway = Vector3.MoveTowards(target.transform.position, transform.position, speed * Time.deltaTime);
+                Vector3 moveAway = Vector3.MoveTowards(transform.position, target.transform.position - target.transform.position, speed * Time.deltaTime / 30);
                 transform.position += moveAway;
-              
             }
         }
-
-        
     }
 
     private void OnTriggerEnter2D(Collider2D other)

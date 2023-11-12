@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 public class MotherPumpkinHP : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class MotherPumpkinHP : MonoBehaviour
     public static int currentHealth = 100;
 
     private bool gameIsOver = false;
+    void Start(){
+        currentHealth = maxHealth;
+    }
     void Update()
     {
         if (currentHealth <= 0 && !gameIsOver)
