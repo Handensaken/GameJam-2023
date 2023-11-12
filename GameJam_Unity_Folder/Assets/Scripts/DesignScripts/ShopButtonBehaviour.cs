@@ -17,7 +17,7 @@ public class ShopButtonBehaviour : MonoBehaviour
         
     }
     public void OpenShop(){
-        shop.SetActive(!shop.active);
+        shop.SetActive(!shop.activeInHierarchy);
     }
     public void CloseShop(){
         shop.SetActive(false);

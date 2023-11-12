@@ -44,6 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5224f16f6d0fbd84da3b90debf4b551f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 167401582590228037, guid: 3c9633b138c7a784bb378577f4171a2c, type: 3}
+  - {fileID: 4346419207348288397, guid: 7ff88773df1145b4e812483b34cb432f, type: 3}
+  - {fileID: 1030865183616883513, guid: e167f6ba43b0a46468bc5691b8f45c11, type: 3}
+  - {fileID: 7048915156440948384, guid: d28d5fd411ab79549856089e3b82de6c, type: 3}
+  - {fileID: 6489256419586931927, guid: 46948f7e63c25334d99a6d009ddab88c, type: 3}
+  - {fileID: 6962735554221373804, guid: 5d3d1af9f2d3f8e44bacdedefe053caa, type: 3}
   enemyPrefab: {fileID: 7949608524724387367, guid: 03d013d65cb9f1d4f9469f5cacbada62, type: 3}
   motherPumpkin: {fileID: 0}
   spawnPoints: []

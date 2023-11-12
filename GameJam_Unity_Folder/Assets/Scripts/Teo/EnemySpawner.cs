@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+
+    //Max coming at ya with suggestion of solution
+    //Denna array innehåller olika prefabs för våra enemies, med matchande sprite, animation och animationscontroller i övrigt är de identiska. 
+    //Vill vi arbeta utifrån en mer kraftfull prefab behöver vi arrays till animationskontroller och sprites, och då måste vi programmatiskt assigna sprite
+    //Jag lämnar det valet till er
+    [SerializeField] private GameObject[] enemyPrefabs;
+    //Denna var det enda jag lade till här uppe
+
     [SerializeField] private GameObject enemyPrefab; //5 levels of difficulty
     [SerializeField] private GameObject motherPumpkin;
     [Space(8)]
@@ -54,6 +62,10 @@ public class EnemySpawner : MonoBehaviour
         int point = Random.Range(0, _remainingSpawnPoints.Count);
         int enemyRank = Random.Range(0, _enemyMaxRank);
         GameObject enemy = enemyPrefab;
+
+        //  Max suggestion 
+        //  GameObject enemy = enemyPrefabs[enemyRank];
+
 
         enemy.GetComponent<EnemyScareCrow>().target = motherPumpkin;
         enemy.GetComponent<EnemyScareCrow>().AssignRankValues(enemyRankStats[enemyRank].maxHp,
