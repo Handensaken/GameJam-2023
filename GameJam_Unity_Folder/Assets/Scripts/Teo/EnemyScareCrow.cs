@@ -19,11 +19,9 @@ public class EnemyScareCrow : MonoBehaviour
     [HideInInspector] public bool _satisfied = false;
 
 
-[SerializeField] private AudioSource sourceSatis;
-[SerializeField] private AudioSource sourceJump;
     void Start()
     {
-        sourceJump = GetComponentInChildren<AudioSource>();
+       
         //Max trademark animation insertion
         anim = this.GetComponent<Animator>();
         //scareCrowHP = stats.maxHp;
@@ -34,7 +32,7 @@ public class EnemyScareCrow : MonoBehaviour
         anim.SetBool("fight",inCombat);
     }
 
-    private bool hello = false;
+ 
     void FixedUpdate()
     {
         if (scareCrowHP <= 0)
@@ -51,18 +49,10 @@ public class EnemyScareCrow : MonoBehaviour
             {
                 Vector3 moveAway = Vector3.MoveTowards(target.transform.position, transform.position, speed * Time.deltaTime);
                 transform.position += moveAway;
-                if(!hello){
-                    sourceJump.Play();
-                    hello =true;
-                }
+              
             }
         }
-        else{
-            if(hello){
-                sourceJump.Stop();
-                hello = false;
-            }
-        }
+
         
     }
 
