@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class BuyingFasterSpawns : MonoBehaviour
 {
     [SerializeField] private VoidEventSO buyThisEvent;
-    [SerializeField] private Money playerSeeds;
     [SerializeField] private TMP_Text costDisplayText;
     [SerializeField] private Button buyButton;
     [SerializeField] private List<int> costs = new List<int>();

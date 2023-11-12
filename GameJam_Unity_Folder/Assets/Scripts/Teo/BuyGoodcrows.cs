@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class BuyGoodcrows : MonoBehaviour
 {
     //[SerializeField] private VoidEventSO buyThisEvent;
-    [SerializeField] private Money playerSeeds;
     [SerializeField] private TMP_Text costDisplayText;
     [SerializeField] private Button buyButton;
     [SerializeField] private List<int> costs = new List<int>();
@@ -18,6 +17,7 @@ public class BuyGoodcrows : MonoBehaviour
 
     private void Awake()
     {
+        Debug.Log("awke");
         if (costs.Count > 0)
         {
             currentCost = costs[0];
@@ -33,6 +33,7 @@ public class BuyGoodcrows : MonoBehaviour
 
     public void BuyNextUpgrade()
     {
+        Debug.Log("click");
         if (Money.money >= currentCost && !fullyUpgraded)
         {
             Money.money -= currentCost;

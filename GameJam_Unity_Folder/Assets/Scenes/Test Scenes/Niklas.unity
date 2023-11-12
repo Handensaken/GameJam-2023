@@ -334,6 +334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PumpkinThrower
       objectReference: {fileID: 0}
+    - target: {fileID: 8843882196582749973, guid: 04d9dd7fff9a19a47b5f1d70414ec20c, type: 3}
+      propertyPath: tickTime
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
