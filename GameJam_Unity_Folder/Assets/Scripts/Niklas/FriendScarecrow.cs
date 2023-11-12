@@ -29,6 +29,7 @@ public class FriendScarecrow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Debug.Log(target);
         if (target != null)
         {
             currentTime += Time.deltaTime;
@@ -80,8 +81,9 @@ public class FriendScarecrow : MonoBehaviour
                 if (enemyScareCrow != null && enemyScareCrow.inCombat != true && enemyScareCrow._satisfied == false)
                 {
                     enemyScareCrow.inCombat = true;
-                    anim.SetBool("SexMachines", true);
                     target = enemyScareCrow;
+                    mouseButtonReleased = false;
+                    anim.SetBool("SexMachines", true);
                 }
             }
         }
