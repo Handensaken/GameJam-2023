@@ -19,11 +19,9 @@ public class FriendScarecrow : MonoBehaviour
     private Animator anim;
     // Start is called before the first frame update
 
-    [SerializeField] private AudioSource sourceEngage;
     void Start()
     {
         anim = this.GetComponent<Animator>();
-         fuckyou = false;
         anim.SetBool("SexMachines", false);
          anim.SetBool("Start", false);
     }
@@ -72,7 +70,6 @@ public class FriendScarecrow : MonoBehaviour
         }
     }
 
-    bool fuckyou = false;
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (active)
@@ -85,10 +82,6 @@ public class FriendScarecrow : MonoBehaviour
                     enemyScareCrow.inCombat = true;
                     anim.SetBool("SexMachines", true);
                     target = enemyScareCrow;
-                    if(!fuckyou){
-                    sourceEngage.Play();
-                    fuckyou = true;
-                    }
                 }
             }
         }
