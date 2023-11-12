@@ -8,7 +8,6 @@ using UnityEngine.UI;
 public class BuyBetterPumpkins : MonoBehaviour
 {
     [SerializeField] private SendNewPercentEventSO buyThisPercentEvent;
-    [SerializeField] private Money playerSeeds;
     [SerializeField] private TMP_Text costDisplayText;
     [SerializeField] private Button buyButton;
     [SerializeField] private List<int> costs = new List<int>();
