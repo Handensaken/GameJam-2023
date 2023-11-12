@@ -135,15 +135,18 @@ public class PumpkinSpawner : MonoBehaviour
         mover.gameObject.SetActive(true);
         throwInArcSO.RaiseEvent();
         float currentTime = 0f;
+        float rot = UnityEngine.Random.Range(-3f, 3f);
 
         do
         {
             currentTime += Time.deltaTime / arcThrowTime;
             mover.position = Vector2.Lerp(start, end, throwDistanceArc.Evaluate(currentTime));
             mover.position += new Vector3(0f, (throwHeightArc.Evaluate(currentTime)) * arcHeightMultiplier, 0f);
+            mover.Rotate(new Vector3(0f, 0f, rot), Space.Self);
             yield return null;
         } while (currentTime < 1f && mover != null);
 
+        mover.rotation = new Quaternion(0f, 0f, 0f, 0f);
         mover.position = end;
     }
 
