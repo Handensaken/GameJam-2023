@@ -63,7 +63,6 @@ public class EnemyScareCrow : MonoBehaviour
             Debug.Log(hungerDamage);
             MotherPumpkinHP.LoseHealth(hungerDamage);
             _satisfied = true;
-            sourceSatis.Play();
         }
     }
 
