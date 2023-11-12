@@ -5,8 +5,8 @@ using UnityEngine;
 public class moneyMaking : MonoBehaviour
 {
     public int moneyPerTick = 1;
+    public ParticleSystem chachingEffect;
 
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,9 +16,12 @@ public class moneyMaking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    public void makeMoney(){
+    
+    public void makeMoney()
+    {
         Money.money += moneyPerTick;
+        chachingEffect.Play();
     }
 }
