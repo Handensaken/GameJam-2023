@@ -13,7 +13,7 @@ public class FriendScarecrow : MonoBehaviour
     private EnemyScareCrow target;
     private float timer = 0.25f;
     private float currentTime;
-    private int level;
+    public int level;
     public bool active = false;
     public bool inCombat = false;
     private Animator anim;
