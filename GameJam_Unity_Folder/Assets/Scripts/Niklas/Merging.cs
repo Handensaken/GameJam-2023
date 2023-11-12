@@ -16,14 +16,19 @@ public class Merging : MonoBehaviour
     private float offsetX, offsetY;
     private bool mouseButtonReleased = false;
 
-    void Start(){
-        if(level > 1){
+
+    void Start()
+    {
+        if (level > 1)
+        {
             //This is really really bad for performance, but a reference doesn't work because unity thinks the audio source is disabled
-            source=GameObject.Find("MergeSoundController").GetComponent<AudioSource>();
+            source = GameObject.Find("MergeSoundController").GetComponent<AudioSource>();
             source.Play();
         }
     }
+    void Update(){
 
+    }
     private void OnMouseDown()
     {
         mouseButtonReleased = false;
@@ -37,7 +42,8 @@ public class Merging : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        mouseButtonReleased = true;
+        StartCoroutine(trueTimer());
+
         Debug.Log("hej");
     }
     private void OnTriggerStay2D(Collider2D collision)
@@ -90,5 +96,12 @@ public class Merging : MonoBehaviour
         Debug.Log("New fruit, new me!");
         pumpkinListEvent.RaiseEvent(-1);
         Destroy(gameObject);
+    }
+    private IEnumerator trueTimer(){
+        mouseButtonReleased = true;
+        
+        yield return new WaitForSeconds(0.2f);
+
+        mouseButtonReleased = false;
     }
 }
