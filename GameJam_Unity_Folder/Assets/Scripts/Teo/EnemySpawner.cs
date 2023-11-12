@@ -25,7 +25,7 @@ public class EnemySpawner : MonoBehaviour
     private float _spawnTime = 20f;
     private bool _readyToSpawn = true;
     private int _enemyMaxRank = 1;
-    private int _level = 0;
+    [SerializeField] private int _level = 0;
     private bool _atMaxDifficulty = false;
     private bool _readyToGitGudder = true;
 
