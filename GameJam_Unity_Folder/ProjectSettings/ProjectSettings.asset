@@ -102,7 +102,7 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 1
   allowFullscreenSwitch: 1
-  fullscreenMode: 3
+  fullscreenMode: 1
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
   xboxEnableGuest: 0
@@ -708,11 +708,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 399ff5c7-3681-4b95-9921-7e9fefc1dd86
+  cloudProjectId: 698b6a00-a647-492d-8fc5-bd8749e3fbad
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GameJam_Unity_Folder
-  organizationId: nimster10
+  projectName: GameJam_2023 (2)
+  organizationId: raggeb
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
