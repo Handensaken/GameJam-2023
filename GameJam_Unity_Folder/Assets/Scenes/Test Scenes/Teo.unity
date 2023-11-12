@@ -494,6 +494,8 @@ GameObject:
   - component: {fileID: 1417541447}
   - component: {fileID: 1417541446}
   - component: {fileID: 1417541445}
+  - component: {fileID: 1417541449}
+  - component: {fileID: 1417541450}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -587,6 +589,33 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1417541449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417541444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e58d90abd9e00149821e1801f2f1e8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 11400000, guid: 2bcaefef46c4e2649bd23c93fa500d6a, type: 2}
+  loseSceneName: LoseScene
+--- !u!114 &1417541450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417541444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfe7de1c832a4244e8073956573c7136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOverEvent: {fileID: 11400000, guid: 2bcaefef46c4e2649bd23c93fa500d6a, type: 2}
 --- !u!224 &1573175750 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6844117262603774089, guid: 28d8dd42dacd5c74da28f4d326e760cd, type: 3}
