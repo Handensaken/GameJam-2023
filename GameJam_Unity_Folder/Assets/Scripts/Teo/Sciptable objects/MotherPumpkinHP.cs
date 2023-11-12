@@ -1,28 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
-[CreateAssetMenu(fileName = "MotherPumpkinHP", menuName = "GameJam_Unity_Folder/MotherPumpkinHP", order = 0)]
-public class MotherPumpkinHP : ScriptableObject
+public class MotherPumpkinHP : MonoBehaviour
 {
     [SerializeField] private VoidEventSO gameOverEvent;
-    public int maxHealth = 1000;
-    public int currentHealth = 1000;
+    public static readonly int maxHealth = 1000;
+    public static int currentHealth = 1000;
 
     private bool gameIsOver = false;
-
-    public void LoseHealth(int value)
+    void Update()
     {
-        currentHealth -= value;
-
         if (currentHealth <= 0 && !gameIsOver)
         {
             gameOverEvent.RaiseEvent();
             gameIsOver = true;
         }
     }
-
+    public static void LoseHealth(int value)
+    {
+        currentHealth -= value;
+    }
     public void GainHealth(int value)
     {
         currentHealth += value;

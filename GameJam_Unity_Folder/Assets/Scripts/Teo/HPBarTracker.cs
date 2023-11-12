@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HPBarTracker : MonoBehaviour
 {
-    [SerializeField] private MotherPumpkinHP hp;
     [SerializeField] private Image hpBarFill;
     
     void Start()
@@ -15,6 +14,6 @@ public class HPBarTracker : MonoBehaviour
 
     void Update()
     {
-        hpBarFill.fillAmount = (float)hp.currentHealth / hp.maxHealth;
+        hpBarFill.fillAmount = MotherPumpkinHP.currentHealth / MotherPumpkinHP.maxHealth;
     }
 }
