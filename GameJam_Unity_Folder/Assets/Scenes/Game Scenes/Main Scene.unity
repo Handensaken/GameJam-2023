@@ -376,7 +376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -555,7 +555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2342,7 +2342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2658,7 +2658,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3355,11 +3355,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4458164667732257071, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.6600885
+      value: -5.21
       objectReference: {fileID: 0}
     - target: {fileID: 4458164667732257071, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.449676
+      value: 0.27
       objectReference: {fileID: 0}
     - target: {fileID: 4458164667732257071, guid: d6f974b1939d3da45a8566829e1570f4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3567,6 +3567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cheat Sheet
       objectReference: {fileID: 0}
+    - target: {fileID: 7718063528460847256, guid: fe02c0f9c0bc92d409b0339269f51885, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3717,7 +3721,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48, y: 175.72}
+  m_AnchoredPosition: {x: 287.44, y: 192.5}
   m_SizeDelta: {x: 225.1154, y: 98.6401}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949776183
@@ -3806,7 +3810,7 @@ MonoBehaviour:
   source: {fileID: 1417956360}
   costDisplayText: {fileID: 611748471}
   buyButton: {fileID: 2007315748}
-  costs: 0a00000096000000dc05000028230000
+  costs: 0a000000f4010000881300007a260000
   goodCrows:
   - {fileID: 1342469520}
   - {fileID: 1596403424}
@@ -3942,7 +3946,7 @@ MonoBehaviour:
   buyThisPercentEvent: {fileID: 11400000, guid: c193b6795de462d47a2cdcc15f6d3029, type: 2}
   costDisplayText: {fileID: 1317001922}
   buyButton: {fileID: 2099232164}
-  costs: 64000000f4010000dc050000
+  costs: 64000000c40900001c250000
   odds:
   - {x: 90, y: 10, z: 0, w: 0}
   - {x: 75, y: 15, z: 10, w: 0}
@@ -4536,11 +4540,11 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 905953608}
+  - {fileID: 2083238574}
   - {fileID: 1862352303}
   - {fileID: 1341715412}
   - {fileID: 1012033821}
   - {fileID: 1763533658}
-  - {fileID: 2083238574}
   - {fileID: 993758837}
   - {fileID: 1585498299}
   - {fileID: 1634455081}
