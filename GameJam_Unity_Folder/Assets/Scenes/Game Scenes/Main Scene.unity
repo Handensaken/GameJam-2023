@@ -2490,6 +2490,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3597658420297611142, guid: adfdb8c382e3ebe45b42a063bf6bc6c9, type: 3}
   m_PrefabInstance: {fileID: 1456159976}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1417956360 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7837122501570091405, guid: 8159b014f1dfe57488df1c2c4221c8e7, type: 3}
+  m_PrefabInstance: {fileID: 3677928120376396672}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1456159976
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3036,7 +3041,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6150806462602612363, guid: 9d35daafa50a54f478e5b7647ed2eb0e, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0041317027
+      value: 0.0047901087
       objectReference: {fileID: 0}
     - target: {fileID: 7137543911998824517, guid: 9d35daafa50a54f478e5b7647ed2eb0e, type: 3}
       propertyPath: m_AnchorMax.x
@@ -3100,7 +3105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32d84e9274575b846ad580e616e0ef7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
+  source: {fileID: 1417956360}
   buyThisEvent: {fileID: 11400000, guid: 87e45a8e8b0a1344b8230033b583fd14, type: 2}
   costDisplayText: {fileID: 1589366875}
   buyButton: {fileID: 1589366879}
@@ -3507,7 +3512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37c4acdbf92a81b4fa18e3ec73b6cb07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
+  source: {fileID: 1417956360}
   costDisplayText: {fileID: 611748471}
   buyButton: {fileID: 2007315748}
   costs: 0a00000096000000dc05000028230000
@@ -3642,7 +3647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 982aa6bcf0384704dbf097589a92f6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  source: {fileID: 0}
+  source: {fileID: 1417956360}
   buyThisPercentEvent: {fileID: 11400000, guid: c193b6795de462d47a2cdcc15f6d3029, type: 2}
   costDisplayText: {fileID: 1317001922}
   buyButton: {fileID: 2099232164}

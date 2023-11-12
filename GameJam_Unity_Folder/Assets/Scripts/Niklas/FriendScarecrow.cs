@@ -6,7 +6,6 @@ using UnityEngine;
 public class FriendScarecrow : MonoBehaviour
 {
     [SerializeField] private GameObject _indicator;
-
     private float offsetX, offsetY;
     public static bool mouseButtonReleased = false;
     private Vector2 mousePosition;
@@ -16,6 +15,7 @@ public class FriendScarecrow : MonoBehaviour
     public int level;
     public bool active = false;
     public bool inCombat = false;
+    public int baseDamage = 1;
     private Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class FriendScarecrow : MonoBehaviour
             currentTime += Time.deltaTime;
             if (currentTime >= timer)
             {
-                target.scareCrowHP -= level;
+                target.scareCrowHP -= baseDamage + level;
                 currentTime = 0;
             }
         }

@@ -10,16 +10,16 @@ public class GrabFriendHP : MonoBehaviour
     // Start is called before the first frame update
 
 
-    private TMP_Text ghee;
+    private TextMeshProUGUI ghee;
     void Start()
     {
-        ghee = GetComponent<TextMeshPro>().TMP_Text;
+        ghee = GetComponent<TextMeshProUGUI>();;
         Debug.Log(ghee);   
     }
 
     // Update is called once per frame
     void Update()
     {
-        //this.GetComponent<TextMeshPro>().text = fren.GetComponent<FriendScarecrow>().level.ToString();       
+        ghee.text = fren.GetComponent<FriendScarecrow>().level.ToString();       
     }
 }
