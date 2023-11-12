@@ -13,11 +13,14 @@ public class FriendScarecrow : MonoBehaviour
     private float currentTime;
     private int level;
     public bool active = false;
-
+    public bool inCombat = false;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = this.GetComponent<Animator>();
+         
+        anim.SetBool("SexMachines", false);
     }
 
     // Update is called once per frame
@@ -31,6 +34,9 @@ public class FriendScarecrow : MonoBehaviour
                 target.scareCrowHP -= level;
                 currentTime = 0;
             }
+        }
+        if(target == null){
+            anim.SetBool("SexMachines", false);
         }
     }
     private void OnMouseDown()
@@ -70,6 +76,7 @@ public class FriendScarecrow : MonoBehaviour
                 if (enemyScareCrow != null && enemyScareCrow.inCombat != true && enemyScareCrow._satisfied == false)
                 {
                     enemyScareCrow.inCombat = true;
+                    anim.SetBool("SexMachines", true);
                     target = enemyScareCrow;
                 }
             }
