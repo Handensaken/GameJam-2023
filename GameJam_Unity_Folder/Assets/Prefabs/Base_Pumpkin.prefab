@@ -120,10 +120,10 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.49861112, y: 0.023611054}
     oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -131,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.2, y: 1.2}
   m_EdgeRadius: 0
 --- !u!50 &8216869620653823004
 Rigidbody2D:
@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2554f8e6380e18e4d8a0a000077e2dbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
   pumpkinListEvent: {fileID: 11400000, guid: f4e989d23fcc4fd4dbc70899faf7851f, type: 2}
   nextPumpkin: {fileID: 5324422241358162313, guid: ba069cd35dcdf7d458bf0a76a6f82041, type: 3}
   level: 1
@@ -187,5 +188,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a29ccf6f698f174b919ad95162ca7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerMoney: {fileID: 11400000, guid: 4fb4e5e860357e04f8597e6060484082, type: 2}
   moneyPerTick: 1
