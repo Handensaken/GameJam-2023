@@ -9,7 +9,7 @@ public class HPBarTracker : MonoBehaviour
     
     void Start()
     {
-        //hpBarFill.fillAmount = hp.currentHealth / hp.maxHealth;
+        hpBarFill.fillAmount = MotherPumpkinHP.currentHealth / MotherPumpkinHP.maxHealth;
     }
 
     void Update()
