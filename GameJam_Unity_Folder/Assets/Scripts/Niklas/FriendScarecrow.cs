@@ -23,7 +23,7 @@ public class FriendScarecrow : MonoBehaviour
     {
         anim = this.GetComponent<Animator>();
         anim.SetBool("SexMachines", false);
-         anim.SetBool("Start", false);
+        anim.SetBool("Start", false);
     }
 
     // Update is called once per frame
@@ -39,7 +39,8 @@ public class FriendScarecrow : MonoBehaviour
                 currentTime = 0;
             }
         }
-        if(target == null){
+        else if (target == null)
+        {
             anim.SetBool("SexMachines", false);
         }
     }
@@ -57,18 +58,25 @@ public class FriendScarecrow : MonoBehaviour
     }
     private void OnMouseDrag()
     {
-        if (active)
+        if (target == null)
         {
-            mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(mousePosition.x - offsetX, mousePosition.y - offsetY);
+            if (active)
+            {
+                mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                transform.position = new Vector2(mousePosition.x - offsetX, mousePosition.y - offsetY);
+            }
         }
     }
     private void OnMouseUp()
     {
-        if (active)
+        if (target == null)
         {
-            mouseButtonReleased = true;
+            if (active)
+            {
+                mouseButtonReleased = true;
+            }
         }
+
     }
 
     private void OnTriggerStay2D(Collider2D collision)
