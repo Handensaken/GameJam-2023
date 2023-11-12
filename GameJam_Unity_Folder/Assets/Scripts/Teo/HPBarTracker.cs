@@ -14,6 +14,7 @@ public class HPBarTracker : MonoBehaviour
 
     void Update()
     {
-        hpBarFill.fillAmount = MotherPumpkinHP.currentHealth / MotherPumpkinHP.maxHealth;
+        hpBarFill.fillAmount = (float)MotherPumpkinHP.currentHealth / (float)MotherPumpkinHP.maxHealth;
+        Debug.Log( MotherPumpkinHP.currentHealth / MotherPumpkinHP.maxHealth);
     }
 }

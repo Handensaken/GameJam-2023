@@ -52,6 +52,7 @@ public class EnemyScareCrow : MonoBehaviour
     {
         if (other.gameObject == target)
         {
+            Debug.Log(hungerDamage);
             MotherPumpkinHP.LoseHealth(hungerDamage);
             _satisfied = true;
         }
