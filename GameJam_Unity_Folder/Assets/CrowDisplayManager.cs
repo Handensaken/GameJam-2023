@@ -28,14 +28,14 @@ public class CrowDisplayManager : MonoBehaviour
     }
 
     public void ActivateNextItem(int level){
-       Debug.Log("Index is" + test);
+      /* Debug.Log("Index is" + test);
        Debug.Log("total count" + _scareCrows.Count);
        Debug.Log(_scareCrows[test]);
        Debug.Log(_scareCrows[test].active);
         _scareCrows[test].active = true;
         _scareCrows[test].SetActive(true);
         _scareCrows[test].gameObject.SetActive(true);        
-        _scareCrows[test].gameObject.active = true;
+        _scareCrows[test].gameObject.active = true;*/
         //INGEN AV DEM FUCKING FUNKAR
     
         Debug.Log("Passed weird part");

@@ -90,6 +90,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void UpdateDifficulty()
     {
+        Debug.Log("peepee poopoo");
         _level++;
 
         _spawnTime = spawnTimes[_level];
