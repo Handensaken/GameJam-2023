@@ -100,15 +100,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7e0e67f3fb0ec43ae8dbcb89694709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 2
   hungerDamage: 25
   scareCrowHP: 200
   pumpkinCraving: 2
   inCombat: 0
   target: {fileID: 0}
   _satisfied: 0
-  sourceSatis: {fileID: 1893393881353911292, guid: ea6e32dd87f236341aab954dd3316806, type: 3}
-  sourceJump: {fileID: 0}
 --- !u!70 &5696624800015976334
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
