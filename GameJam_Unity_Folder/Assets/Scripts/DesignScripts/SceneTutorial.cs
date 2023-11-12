@@ -2,26 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class Scenehandler_DesignVer : MonoBehaviour
+
+public class SceneTutorial : MonoBehaviour
 {
-    
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
-    public void ChangeScene()
+    public void BytScene()
     {
-        SceneManager.LoadScene("TutorialScene");
-    }
-    public void ExitGae(){
-        Application.Quit();
+        SceneManager.LoadScene("Main Scene");
     }
 }
