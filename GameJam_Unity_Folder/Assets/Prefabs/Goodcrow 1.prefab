@@ -178,6 +178,7 @@ MonoBehaviour:
   active: 0
   inCombat: 0
   baseDamage: 1
+  sourceEngage: {fileID: 7417266762115055530, guid: 1d782906005128e47ac5670f4a49dbe7, type: 3}
 --- !u!95 &2082239815944756708
 Animator:
   serializedVersion: 5
