@@ -34,6 +34,8 @@ public class PumpkinSpawner : MonoBehaviour
     [SerializeField] private GameObject pumpkinQueen;
     private Vector3 screenCoordinates;
     [SerializeField] private float inset = 0;
+    [SerializeField] private float distFromMom = 1;
+
     private float currentTime = 0;
 
     [SerializeField] private float throwTime = 1f;
@@ -91,10 +93,10 @@ public class PumpkinSpawner : MonoBehaviour
                 yPos = UnityEngine.Random.Range(-screenCoordinates.y + inset, screenCoordinates.y - inset);
 
                 Vector2 pumpKinQueenSize = pumpkinQueen.GetComponent<BoxCollider2D>().bounds.size;
-                if (xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - 0.05f
-                && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + 0.05
-                && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - 0.05f
-                && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + 0.05)
+                if (xPos >= pumpkinQueen.transform.position.x - pumpKinQueenSize.x * 0.5 - distFromMom
+                && xPos <= pumpkinQueen.transform.position.x + pumpKinQueenSize.x * 0.5 + distFromMom
+                && yPos >= pumpkinQueen.transform.position.y - pumpKinQueenSize.y * 0.5 - distFromMom
+                && yPos <= pumpkinQueen.transform.position.y + pumpKinQueenSize.y * 0.5 + distFromMom)
                 {
                 }
                 else
