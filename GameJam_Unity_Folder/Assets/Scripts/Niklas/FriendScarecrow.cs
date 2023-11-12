@@ -23,6 +23,7 @@ public class FriendScarecrow : MonoBehaviour
         anim = this.GetComponent<Animator>();
          
         anim.SetBool("SexMachines", false);
+         anim.SetBool("Start", false);
     }
 
     // Update is called once per frame
@@ -91,7 +92,7 @@ public class FriendScarecrow : MonoBehaviour
             level = lvl;
             active = true;
             //hehe me in ur code :3
-
+            anim.SetBool("Start", true);
             Debug.Log("are you running a bunch?");
             _indicator.GetComponent<CrowDisplayManager>().ActivateNextItem(level);
         }
