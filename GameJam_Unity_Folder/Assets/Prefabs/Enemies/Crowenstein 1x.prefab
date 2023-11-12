@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb7e0e67f3fb0ec43ae8dbcb89694709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 1
   hungerDamage: 10
   scareCrowHP: 100
   pumpkinCraving: 1
@@ -140,7 +140,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1.03, y: 2.03}
+  m_Size: {x: 0.86, y: 0.79}
   m_Direction: 0
 --- !u!50 &5996863764299200391
 Rigidbody2D:
