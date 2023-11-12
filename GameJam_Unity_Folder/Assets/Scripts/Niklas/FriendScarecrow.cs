@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class FriendScarecrow : MonoBehaviour
 {
+    [SerializeField] private GameObject _indicator;
+
     private float offsetX, offsetY;
     public static bool mouseButtonReleased = false;
     private Vector2 mousePosition;
@@ -88,6 +90,10 @@ public class FriendScarecrow : MonoBehaviour
         {
             level = lvl;
             active = true;
+            //hehe me in ur code :3
+
+            Debug.Log("are you running a bunch?");
+            _indicator.GetComponent<CrowDisplayManager>().ActivateNextItem(level);
         }
         else
         {
