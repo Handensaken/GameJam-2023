@@ -51,6 +51,7 @@ public class PumpkinSpawner : MonoBehaviour
 
 
     [SerializeField] private AudioSource source;
+    [SerializeField] private Animator momPumpAnim;
 
     void Start()
     {
@@ -112,6 +113,7 @@ public class PumpkinSpawner : MonoBehaviour
             }
 
             var newPumpk = Instantiate(RandomizeNextPumpkin());
+            newPumpk.SetActive(false);
             currentSpawnAmount++;
             if (source != null)
             {
@@ -128,6 +130,9 @@ public class PumpkinSpawner : MonoBehaviour
         float arcThrowTime
         )
     {
+        momPumpAnim.SetTrigger("Shoot");
+        yield return new WaitForSeconds(0.5f);
+        mover.gameObject.SetActive(true);
         throwInArcSO.RaiseEvent();
         float currentTime = 0f;
 

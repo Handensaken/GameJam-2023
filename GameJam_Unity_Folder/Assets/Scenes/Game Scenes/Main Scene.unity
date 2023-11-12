@@ -2605,6 +2605,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2110252002570914257, guid: 04d9dd7fff9a19a47b5f1d70414ec20c, type: 3}
+      propertyPath: momPumpAnim
+      value: 
+      objectReference: {fileID: 1862352304}
+    - target: {fileID: 2110252002570914257, guid: 04d9dd7fff9a19a47b5f1d70414ec20c, type: 3}
       propertyPath: pumpkinQueen
       value: 
       objectReference: {fileID: 210961717}
@@ -3655,6 +3659,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 210961722}
   m_SourcePrefab: {fileID: 100100000, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
+--- !u!95 &1862352304 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8657010893617023642, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
+  m_PrefabInstance: {fileID: 1862352303}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1946175386
 GameObject:
   m_ObjectHideFlags: 0

@@ -380,27 +380,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1355620987506245803, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
   m_PrefabInstance: {fileID: 8021999969169774338}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1175426904
+--- !u!95 &1175426904 stripped
 Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8657010893617023642, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
+  m_PrefabInstance: {fileID: 8021999969169774338}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1175426899}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 154f1c897a26a134ea7e986390a6308e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &1203981795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3699069464416509074, guid: 0f18ee8936c6030478886a2b8c444e55, type: 3}
@@ -1013,6 +997,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2110252002570914257, guid: 04d9dd7fff9a19a47b5f1d70414ec20c, type: 3}
+      propertyPath: momPumpAnim
+      value: 
+      objectReference: {fileID: 1175426904}
+    - target: {fileID: 2110252002570914257, guid: 04d9dd7fff9a19a47b5f1d70414ec20c, type: 3}
       propertyPath: pumpkinQueen
       value: 
       objectReference: {fileID: 1175426899}
@@ -1448,10 +1436,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1355620987506245803, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1175426904}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 080ae689125c2244da7b5a16b48b4628, type: 3}
 --- !u!1001 &8536320583373479021
 PrefabInstance:
